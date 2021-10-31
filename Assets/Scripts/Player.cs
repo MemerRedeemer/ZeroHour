@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 
     Rigidbody2D rbgd;
     SpriteRenderer sprite;
-    float speed = 800;
+    float speed = 1000;
     float posY, gravity;
     bool death;
 
