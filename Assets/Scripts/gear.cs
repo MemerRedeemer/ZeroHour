@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class gear : MonoBehaviour
 {
-    // Start is called before the first frame update
+    float posY;
+    float posX;
+    float gearScroll;
+
     void Start()
     {
-        
+        gearScroll = 0.02f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        posY += 0.02f;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject.Destroy(this);
+        Destroy(gameObject);
     }
 }

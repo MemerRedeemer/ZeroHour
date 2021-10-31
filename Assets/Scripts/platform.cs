@@ -5,16 +5,31 @@ using UnityEngine;
 public class platform : MonoBehaviour
 {
     float posY;
-    Rigidbody2D rgbd;
+    Rigidbody2D rgbdPlatform;
+    public GameObject gear;
+    float platformScroll;
 
-    void Start() {
-        rgbd = GetComponent<Rigidbody2D>();
+    void Start() 
+    {
+        rgbdPlatform = GetComponent<Rigidbody2D>();
+        posY = -5;
+        platformScroll = 0.02f;
+        Instantiate(gear, new Vector3(0, 0, 0), Quaternion.identity);
     }
 
     // Update is called once per frame
-    void Update() {
-        posY -= 1;
+    void Update()
+    {
+        posY += platformScroll;
 
-        rgbd.transform.position = new Vector2(0, posY);
+        rgbdPlatform.transform.position = new Vector2(0, posY);
+
+        if (rgbdPlatform.position.y > 12)
+        {
+            Destroy(gameObject);
+        }
     }
+
+
+
 }

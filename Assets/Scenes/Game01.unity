@@ -867,6 +867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fcd5330c0cecbe4593d90dc6481fab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gear: {fileID: 7215420703021174934, guid: c2b54f98e617c3e4a8dab680781a6cab, type: 3}
 --- !u!1001 &3335005653179346381
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -874,6 +875,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1101859513}
     m_Modifications:
+    - target: {fileID: 700186705137974132, guid: 0859768300b9e8a47be9ffb9efc243ad, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2975477798079017655, guid: 0859768300b9e8a47be9ffb9efc243ad, type: 3}
       propertyPath: m_Name
       value: Oneplatform
