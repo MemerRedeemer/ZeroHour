@@ -9,6 +9,10 @@ public class Player : MonoBehaviour {
     SpriteRenderer sprite;
     public GameObject uiManager;
     score ui;
+    AudioSource audioSource;
+    public AudioClip fall;
+    public AudioClip land;
+    public AudioClip oiledgear;
     float speed = 6;
     float posY;
 
@@ -16,6 +20,7 @@ public class Player : MonoBehaviour {
         rbgd = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         ui = uiManager.GetComponent<score>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update() {
@@ -37,11 +42,34 @@ public class Player : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if(collision.gameObject.tag == "death") {
+
+        if (collision.gameObject.tag == "death") {
             ui.Death(true);
         }
         if(collision.gameObject.tag == "gear") {
             ui.AddScore();
-        }
+            if (!audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(oiledgear);
+            }
+          }
+        
+           
+        
+        
+            
+        
+        
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        audioSource.PlayOneShot(land);
+        
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        audioSource.pitch = Random.Range(0.9f, 1.1f);
+        audioSource.PlayOneShot(fall);
     }
 }
