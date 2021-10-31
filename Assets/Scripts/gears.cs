@@ -5,7 +5,7 @@ using UnityEngine;
 public class gears : MonoBehaviour
 {
     public GameObject gear;
-    float targetTimer = 1;
+    float targetTimer = 5;
 
     void Update()
 

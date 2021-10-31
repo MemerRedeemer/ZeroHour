@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
-{
+public class Player : MonoBehaviour {
 
     Rigidbody2D rbgd;
     SpriteRenderer sprite;
-    float speed = 1000;
-    float posY, gravity;
+    float speed = 1250;
+    float posY;
     bool death;
 
     void Start() {
@@ -33,6 +32,7 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision) {
         if(collision.gameObject.tag == "death") {
             death = true;
+            Debug.Log("Ded");
         }
     }
 }

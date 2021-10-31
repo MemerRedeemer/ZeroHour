@@ -2,28 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class platform : MonoBehaviour
-{
-    float posY;
+public class platform : MonoBehaviour {
     Rigidbody2D rgbdPlatform;
-    float platformScroll;
+    float platformScroll = 4;
 
-    void Start() 
-    {
+    void Start() {
         rgbdPlatform = GetComponent<Rigidbody2D>();
-        posY = -4;
-        platformScroll = 0.02f;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        posY += platformScroll;
+    void Update() {
 
-        rgbdPlatform.transform.position = new Vector2(0, posY);
+        rgbdPlatform.velocity = new Vector2(0, platformScroll);
 
-        if (rgbdPlatform.position.y > 12)
-        {
+        if (rgbdPlatform.position.y > 12) {
             Destroy(gameObject);
         }
     }
