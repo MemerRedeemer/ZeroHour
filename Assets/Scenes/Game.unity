@@ -544,7 +544,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Prog - Jonas
+  m_Text: Prog - Jonas Pannee
 --- !u!222 &452608047
 CanvasRenderer:
   m_ObjectHideFlags: 0
