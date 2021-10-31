@@ -7,7 +7,7 @@ public class gear : score {
     public GameObject greasy;
     Rigidbody2D rgbdGear;
     float gearScroll = 3;
-
+    
     void Start() {
         rgbdGear = GetComponent<Rigidbody2D>();
     }
@@ -16,6 +16,7 @@ public class gear : score {
     void Update() {
 
         rgbdGear.velocity = new Vector2(0, gearScroll);
+        
 
         if (rgbdGear.position.y > 12)
         {
