@@ -26,8 +26,6 @@ public class Player : MonoBehaviour
             sprite.flipX = false;
         }
 
-
-
         posY = rbgd.velocity.y;
         rbgd.velocity = new Vector2(posX, posY);
     }
