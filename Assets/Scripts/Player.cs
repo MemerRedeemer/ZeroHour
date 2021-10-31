@@ -48,11 +48,13 @@ public class Player : MonoBehaviour {
         }
         if(collision.gameObject.tag == "gear") {
             ui.AddScore();
+        }
+        if(collision.gameObject.tag == "greased") {
             if (!audioSource.isPlaying)
             {
                 audioSource.PlayOneShot(oiledgear);
             }
-          }
+        }
         
            
         
