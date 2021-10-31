@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class platform : MonoBehaviour {
     Rigidbody2D rgbdPlatform;
-    float platformScroll = 4;
+    float platformScroll = 3;
 
     void Start() {
         rgbdPlatform = GetComponent<Rigidbody2D>();

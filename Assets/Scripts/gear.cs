@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class gear : MonoBehaviour {
+public class gear : score {
 
     public GameObject greasy;
     Rigidbody2D rgbdGear;
-    float gearScroll = 4;
+    float gearScroll = 3;
 
     void Start() {
         rgbdGear = GetComponent<Rigidbody2D>();

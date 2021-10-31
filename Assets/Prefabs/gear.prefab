@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4981803628294037293}
   m_Layer: 0
   m_Name: gear
-  m_TagString: Untagged
+  m_TagString: gear
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -210,6 +210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf23c588f3964064e81b3510c81d5e65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
+  scoreNumber: 0
   greasy: {fileID: 7215420703021174934, guid: 0e6a7ff6a5cb5f84c838012fa3747491, type: 3}
 --- !u!50 &4981803628294037293
 Rigidbody2D:

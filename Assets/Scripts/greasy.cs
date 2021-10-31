@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class greasy: MonoBehaviour {
     Rigidbody2D rgbdGear;
-    float gearScroll = 4;
+    float gearScroll = 3;
 
     void Start() {
         rgbdGear = GetComponent<Rigidbody2D>();
