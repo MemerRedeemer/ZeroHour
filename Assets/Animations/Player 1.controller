@@ -1,5 +1,31 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1102 &-7736716828858150503
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: land
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 18530903014ea604bae8da45ef755df6, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1107 &-6300138594243579306
 AnimatorStateMachine:
   serializedVersion: 6
@@ -14,7 +40,10 @@ AnimatorStateMachine:
     m_Position: {x: 310, y: 50, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4871821228041232047}
-    m_Position: {x: 310, y: 120, z: 0}
+    m_Position: {x: 450, y: -70, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -7736716828858150503}
+    m_Position: {x: 580, y: 50, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions:
@@ -34,7 +63,19 @@ AnimatorController:
   m_PrefabAsset: {fileID: 0}
   m_Name: Player 1
   serializedVersion: 5
-  m_AnimatorParameters: []
+  m_AnimatorParameters:
+  - m_Name: falling
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: grounded
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -94,7 +135,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 42c9fa21f75133446b7957fcda94f679, type: 2}
+  m_Motion: {fileID: 7400000, guid: 8e163abf84f056b4285171b9e800e478, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

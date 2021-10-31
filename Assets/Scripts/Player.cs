@@ -13,14 +13,17 @@ public class Player : MonoBehaviour {
     [SerializeField] AudioClip fall;
     [SerializeField] AudioClip land;
     [SerializeField] AudioClip oiledgear;
+    [SerializeField] Animator anim;
     float speed = 6;
     float posY;
+    float targetTimer = 0.05f;
 
     void Start() {
         rbgd = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         ui = uiManager.GetComponent<score>();
         audioSource = GetComponent<AudioSource>();
+        anim = GetComponent<Animator>();
     }
 
     void Update() {
@@ -50,27 +53,18 @@ public class Player : MonoBehaviour {
             ui.AddScore();
         }
         if(collision.gameObject.tag == "greased") {
-            if (!audioSource.isPlaying)
-            {
+            if(!audioSource.isPlaying) {
                 audioSource.PlayOneShot(oiledgear);
             }
         }
-        
-           
-        
-        
-            
-        
-        
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
+    private void OnCollisionEnter2D(Collision2D collision) {
         audioSource.PlayOneShot(land);
-        
+        anim.Play("land");
+        anim.Play("idle");
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
+    private void OnCollisionExit2D(Collision2D collision) {
         audioSource.pitch = Random.Range(0.9f, 1.1f);
         audioSource.PlayOneShot(fall);
     }
