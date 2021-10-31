@@ -7,12 +7,12 @@ public class Player : MonoBehaviour {
 
     Rigidbody2D rbgd;
     SpriteRenderer sprite;
-    public GameObject uiManager;
+    [SerializeField] GameObject uiManager;
     score ui;
     AudioSource audioSource;
-    public AudioClip fall;
-    public AudioClip land;
-    public AudioClip oiledgear;
+    [SerializeField] AudioClip fall;
+    [SerializeField] AudioClip land;
+    [SerializeField] AudioClip oiledgear;
     float speed = 6;
     float posY;
 
