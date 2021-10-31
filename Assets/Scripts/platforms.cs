@@ -7,11 +7,6 @@ public class platforms : MonoBehaviour
     public GameObject platform;
     float targetTimer = 1;
 
-    void Start()
-    {
-            
-    }
-
     void Update() {
         if(targetTimer > 0) {
             targetTimer -= Time.deltaTime;
