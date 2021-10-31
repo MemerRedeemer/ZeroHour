@@ -6,15 +6,13 @@ public class platform : MonoBehaviour
 {
     float posY;
     Rigidbody2D rgbdPlatform;
-    public GameObject gear;
     float platformScroll;
 
     void Start() 
     {
         rgbdPlatform = GetComponent<Rigidbody2D>();
-        posY = -5;
+        posY = -4;
         platformScroll = 0.02f;
-        Instantiate(gear, new Vector3(0, 0, 0), Quaternion.identity);
     }
 
     // Update is called once per frame

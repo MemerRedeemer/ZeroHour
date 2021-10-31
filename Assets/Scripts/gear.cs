@@ -5,18 +5,27 @@ using UnityEngine;
 public class gear : MonoBehaviour
 {
     float posY;
-    float posX;
-    float gearScroll;
+    Rigidbody2D rgbdGear;
+    float platformScroll;
 
     void Start()
     {
-        gearScroll = 0.02f;
+        rgbdGear = GetComponent<Rigidbody2D>();
+        posY = -4;
+        platformScroll = 0.02f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        posY += 0.02f;
+        posY += platformScroll;
+
+        rgbdGear.transform.position = new Vector2(0, posY);
+
+        if (rgbdGear.position.y > 12)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
