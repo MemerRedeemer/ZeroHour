@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class platform : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    float posY;
+    Rigidbody2D rgbd;
+
+    void Start() {
+        rgbd = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() {
+        posY -= 1;
+
+        rgbd.transform.position = new Vector2(0, posY);
     }
 }

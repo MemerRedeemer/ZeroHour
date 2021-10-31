@@ -13,8 +13,10 @@ public class platforms : MonoBehaviour
     }
 
     void Update() {
-        if(!targetTimer < 0) {
-               
+        if(targetTimer > 0) {
+            targetTimer -= Time.deltaTime;
+        } else {
+
         }
     }
 }
