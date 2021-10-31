@@ -6,24 +6,35 @@ public class Player : MonoBehaviour
 {
 
     Rigidbody2D rbgd;
-    float speed = 200;
+    SpriteRenderer sprite;
+    float speed = 800;
+    float posY, gravity;
+    bool death;
 
     void Start() {
         rbgd = GetComponent<Rigidbody2D>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     void Update() {
-        //Vector3 point = new Vector3(Input.mousePosition.x, Input.mousePosition.y, +10);
-        float posX = Input.GetAxis("Horizontal");
-        float posY = Input.GetAxis("Vertical");
+        float posX = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
 
-        Vector2 pos = new Vector2(posX, posY) * Time.deltaTime * speed;
+        if(Input.GetKey(KeyCode.A)) {
+            sprite.flipX = true;
+        }
+        if(Input.GetKey(KeyCode.D)) {
+            sprite.flipX = false;
+        }
 
-        Vector2 point = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-        float rotationZ = Mathf.Atan2(Input.mousePosition.x, Input.mousePosition.y);
 
-        rbgd.transform.rotation = Quaternion.Euler(0, 0, rotationZ);
-        rbgd.velocity = pos;
 
+        posY = rbgd.velocity.y;
+        rbgd.velocity = new Vector2(posX, posY);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if(collision.gameObject.tag == "death") {
+            death = true;
+        }
     }
 }
